@@ -1,4 +1,5 @@
 # cs465-fullstack
+## Module 1:
 ### Screenshots of process:
 Configure PowerShell to Accept and Run Scripts:
 - Get-ExecutionPolicy -List 
@@ -97,3 +98,16 @@ files:
 - git status
 ![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/1ff3f36f-ee4d-49f2-9cf3-1986339d96c5)
 
+
+## Module 2:
+### Create Git Branch for Module 2
+
+### Create Web Application Folders
+
+### Finalizing Module 2
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/aec8afa6-0740-4d74-a92d-a718ba98fddd)
+- I accidenty put it in my main branch instead so i... looked at current branch then cherry-picked commits of main to module2.
+- Now we commit the changes (git commit -m 'Module 2 completed baseline')
+- Push the changes back to GitHub for safekeeping (git push --set-upstream origin module2)
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/36115c43-8bf2-478d-adcd-3489feee104c)
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/5654845e-2df8-450d-b1dc-b08e57031ff3)
