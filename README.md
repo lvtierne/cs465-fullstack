@@ -61,4 +61,37 @@ there was the same server on so i had to terminate the previous one and redo it 
 
 ![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/1aa84a02-c359-45f5-9766-fa16007d81a2)
 
+### Install Static Web Files
+Now that we have the basic web site up and running it is time to add the static web files that you
+downloaded in the travlr.zip file from the Assignment Guidelines and Rubric for Assignment 1-
+6.
+- Open two Windows Explorer windows so that you can focus on the directory containing
+the unzipped files in one window, and the travlr directory in the other.
+- Copy the .html files to the public directory beneath travlr (drag and drop).
+- Copy the files from the image directory to the public/images directory in the travlr
+folder.
+- Copy the stylesheet from the css folder to the public/stylesheets folder.
+- Stop and restart the Node.JS webserver. You can accomplish this by pressing ctrl-C in the
+Powershell window that is currently running the webserver. This will stop the webserver
+and then it can be started up again with ‘npm start’.
+- Here, you will see that style.css is not found at all. This is the output from running the
+npm command. You can see that the application is looking for the style.css file in the /css
+folder from the website. We can accomplish this by renaming the public/stylesheets
+folder to css and restarting the webserver.
+- Please Note: Express assumes that the default directory for the .css files is stylesheets –
+but it is easier to rename this than it is to edit all of the files in the example website.
 
+Once you have restarted the webserver, you should check it with your browser:
+
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/5a9860fb-fdf3-4a87-b44e-97a289baa20c)
+
+Reload the page in your browser and you should see this now:
+
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/0ac2873f-bfa9-4825-bad2-4eb658e15ead)
+
+### Finalizing Module 1
+The final step for Module 1 is to validate that you have all of your code in GitHub and under
+configuration control.
+From your PowerShell command window, from the travlr directory, check the status of your
+files:
+- git status
