@@ -95,3 +95,5 @@ configuration control.
 From your PowerShell command window, from the travlr directory, check the status of your
 files:
 - git status
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/1ff3f36f-ee4d-49f2-9cf3-1986339d96c5)
+
