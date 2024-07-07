@@ -1,11 +1,14 @@
 # cs465-fullstack
+## Module 1:
 ### Screenshots of process:
 Configure PowerShell to Accept and Run Scripts:
 - Get-ExecutionPolicy -List 
 - Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 - Get-ExecutionPolicy -List
-  
+
 ![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/29c096ad-90d1-474e-acb3-7415eeac86b7)
+
+
 
 ### Create Your Initial Website:
 Open a Windows PowerShell Command Prompt and make certain that you are in the
@@ -57,9 +60,11 @@ git.
 ![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/2e0d159a-59ad-4ed1-a1a9-f6b190160e78)
 ![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/b646b1a9-fd2b-4c58-87e2-03130310f1ef)
 
-there was the same server on so i had to terminate the previous one and redo it again...
+- There was the same server on so i had to terminate the previous one and redo it again...
 
 ![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/1aa84a02-c359-45f5-9766-fa16007d81a2)
+
+
 
 ### Install Static Web Files
 Now that we have the basic web site up and running it is time to add the static web files that you
@@ -89,9 +94,46 @@ Reload the page in your browser and you should see this now:
 
 ![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/0ac2873f-bfa9-4825-bad2-4eb658e15ead)
 
+
+
 ### Finalizing Module 1
 The final step for Module 1 is to validate that you have all of your code in GitHub and under
 configuration control.
 From your PowerShell command window, from the travlr directory, check the status of your
 files:
 - git status
+    
+In order to stage and accept all of the un-tracked files into change management execute the
+appropriate ‘git add’ command to bring everything in the current directory and below the current
+directory into tracking:
+git add .
+- On Powershell. Here: 
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/545eb3f2-e70f-42f6-8eb6-d7d1299ed491)
+
+- Switched to bash in VScode midway. Here:  
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/c66e749a-fd8a-4f1e-bdab-6b03c0e905ad)
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/a9c5baaa-1378-40fc-82fa-b348fc2a8281)
+
+Now that we are ready to commit our files to tracking, we have to first configure two global
+variables for our git repository. The information that needs to be set are the git user.name and git
+user.email parameters. We will set these with the following commands (substituting your own
+values for the contents between the quotation marks. You should use the e-mail address you
+registered for your GitHub account.) Please Note: These commands will set the configuration
+variables for your entire system. If you need to set them only for the current repository, please
+omit the ‘--global’ flag.
+- git config --global user.email "you@example.com"
+- git config --global user.name "Your Name"
+
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/1099e5c2-631e-430e-9e3d-ee80bdbf909a)
+
+Now that they have been added, it is time to commit them to our repository. This is done with the
+following command:
+- git commit -m 'Baseline Express Website – static only'
+Now that the files have been committed, we need to push them to our GitHub repository. This
+final step in the process will push everything to GitHub and we will have a clean copy that we
+can revert to if we have any trouble in our development process.
+- git push --set-upstream origin module1
+
+![image](https://github.com/lvtierne/cs465-fullstack/assets/136281319/ebacafe6-e2c8-4342-9dc7-c7a4edd18ea1)
+
+
