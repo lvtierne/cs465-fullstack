@@ -94,3 +94,24 @@ again edit the app.js file and add a small code block to register the partials d
 <div align="center">
   <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/5654845e-2df8-450d-b1dc-b08e57031ff3" alt="image" width="400"/>
 </div>
+
+## Made a simply but costly error in the app.js file:
+- I was still in the Cherry-Pick Operation so:
+  1.) Review/ Make Changes: in app.js
+  2.) Add Changes: stage the changes to be committed "git add app.js"
+  3.) Continue the Cherry-Pick: when satisfied "git cherry-pick --continue"
+  4.) Verify Status: check "git status"
+  5.) Commit Untracked Files: include app.zip and app_server.zip in your repository, add and commit them:
+  git add app.zip app_server.zip
+  git commit -m "Add zip files for app and server"
+
+<div align="center">
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/dac91365-3177-42cc-aa32-072691d57ecb" alt="image" width="400"/>
+</div>
+
+<div align="center">
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/e5b7fabf-b3f6-43c5-ba42-8aaff73b7ff3" alt="image" width="400"/>
+</div>
+
+
+
