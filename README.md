@@ -1,5 +1,5 @@
 # cs465-fullstack
-## Module 2:
+## Module 3:
 ### Create Git Branch for Module 2
 - Perform the following command in a PowerShell window in the travlr project directory:
   - git checkout -b module2
