@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -18,28 +17,6 @@ app.set('view engine', 'hbs');
 
 // register handlebars partials (https://www.npmjs.com/package/hbs)
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
-=======
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-
-const indexRouter = require('./app_server/routes/index');
-const usersRouter = require('./app_server/routes/users');
-const travelRouter = require('./app_server/routes/travel');
-
-const app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'app_server', 'views'));
-
-const hbs = require('hbs');
-// register handlebars partials (https://www.npmjs.com/package/hbs)
-hbs.registerPartials(path.join(__dirname, 'app_server','views/partials'));
-
-app.set('view engine', 'hbs');
->>>>>>> 381cf44 (Module 3 completed baseline)
 
 app.use(logger('dev'));
 app.use(express.json());
