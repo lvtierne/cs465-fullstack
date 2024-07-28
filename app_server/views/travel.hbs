@@ -3,19 +3,28 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+<<<<<<< HEAD
 	<title>Dive Sites - Bhaccasyoniztas Beach Resort Website Template</title>
+=======
+	<title>{{title}}</title>
+>>>>>>> 381cf44 (Module 3 completed baseline)
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	<div id="background">
 		<div id="page">
+<<<<<<< HEAD
 			{{> header}}
+=======
+			{{> header }}
+>>>>>>> 381cf44 (Module 3 completed baseline)
 			<div id="contents">
 				<div class="box">
 					<div>
 						<div class="body">
 							<h1>Travel</h1>
 							<ul id="sites">
+<<<<<<< HEAD
 								<li>
 									<a href=“travel.html"><img src="images/reef1.jpg" alt="Img"></a>
 									<h2><a href=“travel.html">Gale Reef</a></h2>
@@ -46,6 +55,15 @@
 										Vulputate eget libero. In hac habitasse platea dictumst. Integer purus justo, egestas eu consectetur eu, cursus in tortor. Quisque nec nunc ac mi ultrices iaculis.
 									</p>
 								</li>
+=======
+			{{#each trips}}
+								<li>
+									<a href=“/travel"><img src="images/{{this.image}}" alt="Img"></a>
+									<h2><a href=“/travel">{{this.name}}</a></h2>
+									{{{this.description}}}
+								</li>
+			{{/each}}
+>>>>>>> 381cf44 (Module 3 completed baseline)
 							</ul>
 						</div>
 					</div>
@@ -55,4 +73,8 @@
 		{{> footer}}
 	</div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 381cf44 (Module 3 completed baseline)
