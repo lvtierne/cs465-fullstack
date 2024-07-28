@@ -1,106 +1,104 @@
 # cs465-fullstack
-## Module 3: Static HTML to Templates with JSON
-- In this module, we are going to replace static HTML with templates that will utilize JSON to
-format and display information. 
-### Create Git Branch for Module 3
+## Module 4: NoSQL Databases, Models, and Schemas
+- In this module, we are going to take the next step and integrate our code with MongoDB, a
+NoSQL database. This will be much more efficient for storing JSON documents than trying to
+read them from the file-system every time a request is made to the database.
+
+### Create Git Branch for Module 4
 - Before you begin, it is important to make sure that you have created your new branch in git for
-Module 3. To accomplish this, we will perform the following command in a PowerShell window
+Module 4. To accomplish this, we will perform the following command in a PowerShell window
 in the travlr project directory:
-  - git checkout -b module3
-
+  - git checkout -b module4
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/4c28599a-9fc1-48ed-9c49-72b57f81b9af" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/3e699b15-5d2d-45cc-bb55-41a96cf5e21a" alt="image" width="400"/>
 </div>
 
-### Replacing Static HTML with Templates
-- We are going to be working on the Trips displayed on the Travel page on the website. We have
-already started to update the raw travel.html page by turning it into a rendered page using
-handlebars. We have separated out the header and footer into partials and reduced the code in the
-remaining template. Now we are going to work on the content of the trips displayed on the page.
-- To accomplish this, we are going to replace the hard-coded HTML trip content with a loop that
-will render JSON data using handlebars directives. 
+### Install and Configure Mongoose
+- Begin by installing Mongoose. Mongoose is the NodeJS package that enables interaction
+with a MongoDB database. This will be installed similarly to any of the other NodeJS
+packages, via NPM.
+- (in the image above) as [ npm install mongoose ]
 
-1. This is the display of one of the trips currently embedded as static HTML on the page:
-....
-
-2. To enable the transition to a handlebars loop, we will first begin by creating a data folder
-in the main travlr project directory. In the new data folder, we will create a trips.json file
-that will contain a JSON description of the trips for the purposes of testing. Please Note:
-We are asking you to add the name of the trip to the description line in each trip
-instance so that it is evident when the JSON data is being rendered instead of just
-displaying the static HTML.
+### Create the folders needed
+1. Now we will create a new models folder underneath the app_server folder for our
+application. This is where we will create a module that will hold the schema for our trips.
+This module will be named travlr.js.
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/01acb1ea-8529-4262-810f-81444ba067d5" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/a62deba6-e193-41b0-973a-83ae1a2bdd05" alt="image" width="400"/>
+</div>
+- *Please Note* the highlighted portion of the previous image. The trip code and name will be
+indexed in MongoDB for faster retrieval. The start date will be stored using the ISO standard
+date format, and the collection will be named ‘trips’.
+
+2. We can use the db.js module from Chapter 5, section 1 of your textbook with only minor
+changes for our project. The code is reflected in pdf given.
+
+### Seeding the Database
+- The next step in the connection of our application to the database is putting some seed data into
+the Database. There are multiple ways that we can accomplish this – you can use Mongo
+Compass to create the database, the collection, and add seed data, and you could do the same in
+DBeaver. However, we are going to take a different route and seed the database by leveraging
+some of the code that we have already built and creating a small Node JS script to insert data into
+the database.
+1. The first step we need to take is to adjust the trips.json data file that we created earlier in
+order to provide the additional properties that we identified for our schema. In this case, we
+are going to add key-value pairs for the new attributes: code, length, start, resort, and perPerson.
+<div align="center">
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/594433b0-1689-4c3e-b94a-c2cfd5a025dd" alt="image" width="400"/>
 </div>
 
-3. The next step will be to edit the travel.js controller file in order to use the built-in
-NodeJS filesystem component to read the data file that we just created. We will be using
-the fs.readFileSync() method to retrieve the JSON.
-  - var fs = require('fs');
-  - var trips = JSON.parse(fs.readFileSync('.data/trips.json',
-  - 'utf8'));
+2. Next, we need to create a new file in the models directory in the travlr application named
+seed.js. This will be the script that we utilize to enter the seed data into our MongoDB
+instance.
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/83a6b9ef-2e49-4d70-a3fc-bfc61b172d9e" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/75f212da-811e-4893-ad02-7403f24dafaf" alt="image" width="400"/>
+</div>
+Using this method to seed the database, we will remove any existing records each time we rerun the seed script. You can modify the number of records seeded by editing the trips.json
+file.
+
+3. Now that we have the seed script created, we will execute the script. The execution is a little
+bit different than what we have used before because we will be using node directly, and not
+invoking it through the package manager.
+<div align="center">
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/b203390d-6abd-4b54-ae4d-828ad961756d" alt="image" width="400"/>
+</div>
+(had to reinstall mongoDB)
+
+4. The next step is to use Mongo Compass or DBeaver to verify that the data has been loaded
+in the database. Using Mongo Compass, we will connect to the instance of MongoDB
+running on our localhost (select Connect to proceed):
+<div align="center">
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/dc1dff5d-9a0d-49eb-9928-531b4c39e387" alt="image" width="400"/>
 </div>
 
-*Please Note:* It is not a best practice to read a JSON file every time the webserver
-processes a request. This is a method used during development to support rapid
-prototyping and should be replaced before the applications goes into production.
-
-4. The final step in this process is to edit the travel.hbs template and replace the static
-HTML list entries for the trips with a {{#each trips}} {{/each}} directive. This is handlebars
-notation to create a loop for each object in the ‘trips’ data collection, allowing you to
-process each object in a consistent manner.
+5. At this point you should see that the travlr database exists and contains a ‘trips’ collection:
+6. Selecting the ‘trips’ collection will allow you to see that three records have been added to
+the database.
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/96466379-8bb9-4fd9-bf79-aca2ec83b3ac" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/4ac3b02d-cbdd-48fd-8dc5-9bfebe9dee79" alt="image" width="400"/>
 </div>
 
-- At this point, you can restart your webserver, and test to make sure that you are now
-seeing the rendered code which will have the name of the trip in the description as well.
-...
-
-Your effort has replaced 120 lines of static HTML with 35 lines of code including 3
-different handlebars directives that allow the rendered page to be driven dynamically
-with data passed in to the template.
-
-*Optional Challenge:* Using the techniques that you have just learned, repeat these steps
-to convert other static HTML pages to Handlebars templates, either with or without
-JSON data. This is your opportunity to experiment!
-### Finalizing Module 3
-1. Now that we have completed Module 3, we go back to git and make sure that we add
+### Finalizing Module 4
+1. Now that we have completed Module 4, we go back to git and make sure that we add
 everything to tracking. We start by checking the status of what has changed (git status):
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/07776ee1-bd7a-4720-bc4a-146edae74e7a" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/61ec6d1a-d501-468c-abb9-dea7a7e521ae" alt="image" width="400"/>
 </div>
 
 2. Then we add all of those changes into tracking (git add .):
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/384f2e4f-ddbb-4916-bb0f-095d8017b622" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/a17596ea-5722-4244-923a-1d10c38dd6ec" alt="image" width="400"/>
 </div>
 
-3. Now we commit the changes (git commit -m 'Module 3 completed baseline'):
+3. Now we commit the changes (git commit -m 'Module 4 completed baseline'):
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/07776ee1-bd7a-4720-bc4a-146edae74e7a" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/de65f174-ac42-4035-904d-5362b6259e0c" alt="image" width="400"/>
 </div>
 
-
-## Made a simply but costly error in the app.js file:
-- I was still in the Cherry-Pick Operation so:
-  1.) Review/ Make Changes: in app.js
-  2.) Add Changes: stage the changes to be committed "git add app.js"
-  3.) Continue the Cherry-Pick: when satisfied "git cherry-pick --continue"
-  4.) Verify Status: check "git status"
-  5.) Commit Untracked Files: include app.zip and app_server.zip in your repository, add and commit them:
-  git add app.zip app_server.zip
-  git commit -m "Add zip files for app and server"
-
+4. We push the changes back to GitHub for safekeeping (git push --set-upstream
+origin module4):
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/dac91365-3177-42cc-aa32-072691d57ecb" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/2a908737-5175-4da9-8e68-e0a2d123ffbd" alt="image" width="400"/>
 </div>
-
-<div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/e5b7fabf-b3f6-43c5-ba42-8aaff73b7ff3" alt="image" width="400"/>
-</div>
-
 
 
