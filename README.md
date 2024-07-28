@@ -57,7 +57,9 @@ process each object in a consistent manner.
 
 - At this point, you can restart your webserver, and test to make sure that you are now
 seeing the rendered code which will have the name of the trip in the description as well.
-...
+<div align="center">
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/f9f86063-e79c-4776-a3ee-ae0a1201afda" alt="image" width="400"/>
+</div>
 
 Your effort has replaced 120 lines of static HTML with 35 lines of code including 3
 different handlebars directives that allow the rendered page to be driven dynamically
@@ -66,6 +68,7 @@ with data passed in to the template.
 *Optional Challenge:* Using the techniques that you have just learned, repeat these steps
 to convert other static HTML pages to Handlebars templates, either with or without
 JSON data. This is your opportunity to experiment!
+
 ### Finalizing Module 3
 1. Now that we have completed Module 3, we go back to git and make sure that we add
 everything to tracking. We start by checking the status of what has changed (git status):
@@ -80,27 +83,13 @@ everything to tracking. We start by checking the status of what has changed (git
 
 3. Now we commit the changes (git commit -m 'Module 3 completed baseline'):
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/07776ee1-bd7a-4720-bc4a-146edae74e7a" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/747ad010-ff07-4edb-a9e3-63eb87e19c92" alt="image" width="400"/>
 </div>
 
-
-## Made a simply but costly error in the app.js file:
-- I was still in the Cherry-Pick Operation so:
-  1.) Review/ Make Changes: in app.js
-  2.) Add Changes: stage the changes to be committed "git add app.js"
-  3.) Continue the Cherry-Pick: when satisfied "git cherry-pick --continue"
-  4.) Verify Status: check "git status"
-  5.) Commit Untracked Files: include app.zip and app_server.zip in your repository, add and commit them:
-  git add app.zip app_server.zip
-  git commit -m "Add zip files for app and server"
-
+4. We push the changes back to GitHub for safekeeping (git push --set-upstream
+origin module3):
 <div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/dac91365-3177-42cc-aa32-072691d57ecb" alt="image" width="400"/>
+  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/742870e2-e29b-422f-81c5-787fb8e25730" alt="image" width="400"/>
 </div>
-
-<div align="center">
-  <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/e5b7fabf-b3f6-43c5-ba42-8aaff73b7ff3" alt="image" width="400"/>
-</div>
-
 
 
