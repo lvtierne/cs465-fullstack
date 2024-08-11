@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var { travel } = require("../controllers/travel");
+var roomsPage = require("../controllers/rooms");
 
-router.get("/", travel);
+router.get("/", roomsPage.rooms);
 module.exports = router;

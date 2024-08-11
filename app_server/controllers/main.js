@@ -1,7 +1,4 @@
-/* Get Homepage */
-const index = (req, res) => {
-    res.render('index', {title : 'Travlr Getaways'})
-};
-module.exports = {
-    index
-};
+// Get Home Page
+const index = (req, res) =>
+    res.render("index", { title: "Travlr Gataways", selected: { index: true } });
+  module.exports = { index };

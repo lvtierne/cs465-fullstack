@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var { travel } = require("../controllers/travel");
+var mealsPage = require("../controllers/meals");
 
-router.get("/", travel);
+router.get("/", mealsPage.meals);
 module.exports = router;
