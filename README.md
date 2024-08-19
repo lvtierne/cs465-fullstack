@@ -169,6 +169,13 @@ files:
 ![image](https://github.com/user-attachments/assets/f2db09ea-1f1c-440d-bdf4-9ebb934e349e)
 ![image](https://github.com/user-attachments/assets/40ff6fb1-cfdf-4568-8045-55265ce90216)
 ![image](https://github.com/user-attachments/assets/079a8fe7-e0ff-4eba-896b-9f3138c6b835)
+![image](https://github.com/user-attachments/assets/7d0b3924-940c-4871-920f-c1ccd474f85c)
+
+
+### Finalizing Module 6:
+- Now that we have completed Module 6, we go back to git and make sure that we add
+everything to tracking. We start by checking the status of what has changed (git status):
+
 
 
 
