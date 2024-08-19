@@ -1,0 +1,35 @@
+<div class="row"> <!-- Create a Bootstrap row to align the form within the container -->
+    <div class="col-12 col-md-8"> <!-- Define a Bootstrap column that spans full width on small screens and 8 out of 12 columns on medium screens and up -->
+        <h2>Login</h2> <!-- Heading for the login section -->
+
+        <!-- Form for user login, bound to the onLoginSubmit method on submission -->
+        <form (ngSubmit)="onLoginSubmit()">
+            
+            <!-- Display an error message if formError has a value -->
+            <div role="alert" *ngIf="formError" class="alert alert-danger">
+                {{ formError }} <!-- Show the error message -->
+            </div>
+
+            <!-- Form group for the email input -->
+            <div class="form-group">
+                <label for="email">Email Address</label> <!-- Label for the email input field -->
+                <input type="email" name="email" 
+                placeholder="Enter email address" 
+                [(ngModel)]="credentials.email"> <!-- Input field for email, two-way bound to credentials.email -->
+            </div>
+
+            <!-- Form group for the password input -->
+            <div class="form-group">
+                <label for="password">Password</label> <!-- Label for the password input field -->
+                <input type="password" class="form-control" id="password" 
+                name="password" placeholder="e.g 12+ alphanumerics" 
+                [(ngModel)]="credentials.password"> <!-- Input field for password, two-way bound to credentials.password -->
+            </div>
+            
+            <!-- Submit button for the form -->
+            <button type="submit" role="button" class="btn btn-primary">
+                Sign In! <!-- Text on the submit button -->
+            </button>
+        </form>
+    </div>
+</div>

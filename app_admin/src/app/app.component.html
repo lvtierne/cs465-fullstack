@@ -1,11 +1,5 @@
-<!--<h1>{{ title }}</h1>-->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{ title }}</a>
-  </div>
-</nav>
+<app-navbar></app-navbar> <!-- Include the NavbarComponent to display the navigation bar at the top of the page -->
 
-<div class="container">
- <!--<app-trip-listing></app-trip-listing>--> 
-  <router-outlet></router-outlet>
+<div class="container"> <!-- Create a container div to hold the routed content and apply styling -->
+  <router-outlet></router-outlet> <!-- RouterOutlet directive placeholder where routed components will be displayed -->
 </div>
