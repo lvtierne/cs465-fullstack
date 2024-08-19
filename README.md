@@ -1,6 +1,7 @@
 # cs465-fullstack
 ## Module 6: SPA (Single Page Application)
 ### Create Git Branch for Module 6
+- 
 <div align="center">
   <img src="https://github.com/lvtierne/cs465-fullstack/assets/136281319/c1fdc9f5-d1d1-472f-b773-2ee515e39a57" alt="image" width="400"/>
 </div>
