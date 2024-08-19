@@ -1,12 +1,19 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express'); // Express App
+const router = express.Router(); // Router Logic
 
-//import api controller for trips
-const { tripsList, tripsFindByCode } = require("../controllers/trips");
+// import the controllers
+const tripsController = require('../controllers/trips');
 
-//define route for the endpoint
-router.get("/trips", tripsList); // GET: ALL
+// Define route for trips endpoint
+router
+  .route("/trips")
+  .get(tripsController.tripsList) // Get Method routes tripList
+  .post(tripsController.tripsAddTrip); // POST Method Adds a Trip
 
-router.get("/trips/:tripCode", tripsFindByCode); // GET: ONE
+// GET Method rutes tripsFindByCode - requires parameter
+router
+  .route("/trips/:tripCode")
+  .get(tripsController.tripsFindByCode)
+  .put(tripsController.tripsUpdateTrip);
 
 module.exports = router;

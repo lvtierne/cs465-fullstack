@@ -1,9 +1,31 @@
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
-</html>
+<div id="header">
+	<div id="logo">
+		<a href="/"><img src="images/logo.png" alt="LOGO" height="100" width="200"></a>
+	</div>
+	<div id="navigation">
+		{{req.path}}
+		<ul>
+			<li class="{{#if homeSelected}}selected{{/if}}">
+				<a href="/">Home</a>
+			</li>
+			<li class="{{#if travelSelected}}selected{{/if}}">
+				<a href="/travel">Travel</a>
+			</li>
+			<li class="{{#if roomsSelected}}selected{{/if}}">
+				<a href="/rooms">Rooms</a>
+			</li>
+			<li class="{{#if mealsSelected}}selected{{/if}}">
+				<a href="/meals">Meals</a>
+			</li>
+			<li class="{{#if newsSelected}}selected{{/if}}">
+				<a href="/news">News</a>
+			</li>
+			<li class="{{#if homeSelected}}selected{{/if}}">
+				<a href="/about">About</a>
+			</li>
+			<li class="{{#if contactSelected}}selected{{/if}}">
+				<a href="/contact">Contact</a>
+			</li>
+		</ul>
+	</div>
+</div>

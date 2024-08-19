@@ -1,6 +1,8 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-var newsPage = require("../controllers/news");
+var controller = require('../controllers/news');
 
-router.get("/", newsPage.news);
+// GET travel page
+router.get('/', controller.news);
+
 module.exports = router;

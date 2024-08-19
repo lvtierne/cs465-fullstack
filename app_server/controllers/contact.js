@@ -1,7 +1,6 @@
-const contact = (req, res) =>
-    res.render("contact", {
-      title: "Travlr Getaways",
-      selected: { contact: true },
-    });
-  
-  module.exports = { contact };
+// Get contact view
+const contact = (req, res) => {
+    res.render('contact', { title: 'Travlr Getaway' });
+};
+
+module.exports = { contact };
