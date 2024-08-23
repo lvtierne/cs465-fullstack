@@ -1,8 +1,26 @@
 # Travlr Getaways Full Stack Web Application
 
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Test Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)
+
+## Table of Contents
+- [Overview](#overview)
+- [Architecture](#architecture)
+  - [Frontend Development Comparison](#frontend-development-comparison)
+  - [Why Use NoSQL MongoDB?](#why-use-nosql-mongodb)
+- [Functionality](#functionality)
+  - [JSON vs. JavaScript](#json-vs-javascript)
+  - [Refactoring and Reusable UI Components](#refactoring-and-reusable-ui-components)
+- [Testing](#testing)
+  - [Methods and Challenges](#methods-and-challenges)
+- [Reflection](#reflection)
+- [License](#license)
+- [Contact](#contact)
+- [Contributing](#contributing)
+
 ## Overview
 
-In this project, I developed a comprehensive full stack web application for Travlr Getaways, a travel booking site. The application serves both customer and administrative functions using the MEAN stack: MongoDB, Express, Angular, and Node.js. This README provides a detailed reflection on the project's architecture, functionality, testing, and personal development.
+Travlr Getaways is a full stack travel booking application developed using the MEAN stack. The application allows users to search for travel packages, book reservations, and manage itineraries. Administrators can manage customer data, travel packages, and pricing. The application includes a secure login system for both customers and admins.
 
 ## Architecture
 
@@ -60,6 +78,12 @@ This course has significantly advanced my professional skills and career readine
 
 These skills have prepared me to tackle complex web development projects and improve my marketability as a software developer. The project has provided valuable experience in creating functional, secure, and user-centric applications.
 
----
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, please contact me at [laynietierney@gmail.com](mailto:laynietierney@gmail.com).
 
 For more details and code, visit the [project repository](https://github.com/lvtierne/cs465-fullstack).
