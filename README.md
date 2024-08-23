@@ -16,7 +16,6 @@
 - [Reflection](#reflection)
 - [License](#license)
 - [Contact](#contact)
-- [Contributing](#contributing)
 
 ## Overview
 
